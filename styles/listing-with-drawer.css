@@ -1,0 +1,147 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav, main {
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+a#menu svg {
+  width: 30px;
+  fill: #000;
+}
+
+/**********************************************************
+* Flexbox que controla el layout del listado central
+**********************************************************/
+
+/* 
+  Esta clase define al flexbox del contenedor principal  
+  del listado central
+*/
+.container {
+  width: 100%;
+  display: flex;  
+  flex-wrap: wrap;
+}
+
+/* 
+  Esta clase a cada item dentro del flexbox del listado
+  central
+*/
+.box {
+  min-width: 250px;
+  height: 150px;
+}
+
+/*
+  Como cuando el viewport es menor de 500 pixeles no se
+  muestra la gaveta o navbar y cuando se amplie el 
+  viewport desde los 250px que es el tamano minimo 
+  de las cajas hasta los 500px en se despliega la 
+  gaveta o navbar quedara un espacio cada vez mayor 
+  alrededor de las cajas y el margen derecho hasta que  
+  se alcancen los 500px. Por esto ponemos un media query
+  para centrar la columna de cajas cuando el viewport es 
+  menor de 500 pixeles.
+
+  Nota que el breakpoint para centrar las cajas no es
+  solo hasta 500px sino hasta 725px porque queremos 
+  centrar las cajas tambien cuando esta desplegada la
+  gaveta hasta el momento que pasamos de una columna 
+  de cajas hasta dos columnas de cajas.
+*/
+@media only screen and (max-width : 725px) {
+  .container {
+    width: 100%;
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/**********************************************************
+* Gaveta
+**********************************************************/
+
+/* 
+  Drawer using off-canvas layout 
+
+  Take a look at the CSS below, which handles the nav menu's 
+  transition from hidden to visible. This open class is going 
+  to be applied on click, which means when the user clicks on 
+  the hamburger menu, this class will be applied.
+
+  Since we're mobile-first, by default, the drawer is hidden. 
+*/
+nav {
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-200px, 0);
+  transform: translate(-200px, 0);
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+}
+nav.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+/*
+  Media queries para hacer que la gaveta esta cerrada por defecto
+  para anchos menores a 500px.
+  If there is enough space (> 500px), we keep the drawer open all 
+  the time.
+*/
+@media screen and (min-width: 500px) {
+
+  /* We open the drawer. */
+  nav {
+    min-width: 200px;
+    position:relative;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  /* We use Flexbox on the parent. */
+  body {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+  }
+
+  main {
+    width: auto;
+    /* Flex-grow streches the main content to fill all available space. */
+    flex-grow: 1;
+  }
+
+  /*
+    Para esconder el icono del menu hamburguesa cuando la gaveta
+    esta desplegada.
+  */
+  .hamburguer_icon {
+    display: none;
+  }
+
+}
+
+

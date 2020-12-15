@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout flexbox con gaveta</title>
+    <link rel="stylesheet" type="text/css" href="./styles/listing-with-drawer.css">
+    <link rel="stylesheet" type="text/css" href="./styles/colors.css">    
+  </head>
+
+  <body>
+
+    <nav id="drawer" class="red">
+      <h3>Drawer using Off Canvas Layout</h3>
+      <p>Navbar item</p>
+    </nav>
+
+    <main class="light_gray">
+      <!-- Icono del menu hamburguesa -->      
+      <a id="menu" class="hamburguer_icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+        </svg>
+      </a>
+      <p>Listing header</p>
+      <!-- Listado central -->
+      <div class="container">
+        <div class="box seafoam"></div>
+        <div class="box light_blue"></div>
+        <div class="box green"></div>
+        <div class="box lime"></div>
+        <div class="box orange"></div>
+      </div>
+    </main>
+
+    <script>
+      /*
+       * Open the drawer when the menu ison is clicked.
+       */
+      var menu = document.querySelector('#menu');
+      var main = document.querySelector('main');
+      var drawer = document.querySelector('#drawer');
+
+      menu.addEventListener('click', function(e) {
+        drawer.classList.toggle('open');
+        e.stopPropagation();
+      });
+      main.addEventListener('click', function() {
+        drawer.classList.remove('open');
+      });
+
+    </script>
+
+  </body>
+
+</html>
