@@ -14,12 +14,7 @@
   <body>
 
     <!-- Sidebar or drawer-->
-    <nav id="drawer" class="red">
-      <div class="user-avatar-box">
-        <a id="user-menu">
-          <img src="./assets/user-avatar.png" alt="User picture" class="user-avatar">
-        </a>
-      </div>
+    <nav id="drawer" class="drawer">
       <h3>Drawer with main menu</h3>
     </nav>
 
@@ -40,16 +35,21 @@
         </div>
         <!-- Logo --> 
         <div class="logo-box">
-          <img src="./assets/firebase-logo.png" alt="logo" height="40px" >
+          <img src="./assets/firebase-logo.png" alt="logo" height="40px" style="margin-top:3px;margin-bottom:-1px;">
         </div>
         <!-- Long logo --> 
         <div class="long-logo-box">
-          <img src="./assets/firebase-long-logo.png" alt="logo" height="40px" >
+          <img src="./assets/firebase-long-logo.png" alt="logo" height="40px" style="margin-top:4px;margin-bottom:-3px;">
         </div>           
+        <div class="user-avatar-box">
+          <a id="user-menu">
+            <img src="./assets/user-avatar.png" alt="User picture" class="user-avatar">
+          </a>
+        </div>
       </div>
 
       <!-- Barra de busqueda -->
-      <div class="search-navbar">
+      <div class="container-search-navbar">
         <!-- Caja de busqueda --> 
         <div class="search-box">
           <input 
@@ -59,8 +59,8 @@
             placeholder="Search for items..."
           >
           <!-- Icono de filtrado --> 
-          <span>
-          <a id="menu" class="filter_icon">
+          <span class="filter_icon">
+          <a id="menu">
             <svg class="svg-icon" viewBox="0 0 20 20">
               <path fill="none" d="M15.808,14.066H6.516v-1.162H5.354v1.162H4.193c-0.321,0-0.581,0.26-0.581,0.58s0.26,0.58,0.581,0.58h1.162
                 v1.162h1.162v-1.162h9.292c0.32,0,0.58-0.26,0.58-0.58S16.128,14.066,15.808,14.066z M15.808,9.419h-1.742V8.258h-1.162v1.161
@@ -76,7 +76,27 @@
         </div>       
       </div>
 
-      <p>Listing header</p>
+      <!-- Barra de busqueda -->
+      <div class="container-search-filters"> <!-- DEFINIR ESTA CLASE COMO UN FLEXBOX-->
+        <div class="box-search-filters">
+          <label for="sort-by">Ordenar por:</label>
+          <select name="sort-by" id="sort-by" class="select">
+            <option value="precio-mas-bajo">Precio mas bajo</option>
+            <option value="precio-mas-alto">Precio mas alto</option>
+            <option value="relevantes">Mas relevantes</option>
+          </select>
+        </div>
+        <div class="box-search-filters">
+          <label for="price-range">Rango de precio:</label>
+          <select name="price-range" id="price-range" class="select">
+            <option value="1-10">1-10</option>
+            <option value="11-20">11-20</option>
+            <option value="21-30">21-30</option>
+          </select>
+        </div>
+      </div>      
+
+      <h3 style="margin-left:15px;">Popular</h3>
       
       <!-- Listado central -->
       <div class="container-main-listing">
