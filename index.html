@@ -5,32 +5,86 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout flexbox con gaveta</title>
-    <link rel="stylesheet" type="text/css" href="./styles/listing-with-drawer.css">
-    <link rel="stylesheet" type="text/css" href="./styles/colors.css">    
+    <link rel="stylesheet" type="text/css" href="./styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="./styles/colors.css">
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles/svgicons.css">
   </head>
 
   <body>
 
+    <!-- Sidebar or drawer-->
     <nav id="drawer" class="red">
-      <h3>Drawer using Off Canvas Layout</h3>
-      <p>Navbar item</p>
+      <div class="user-avatar-box">
+        <a id="user-menu">
+          <img src="./assets/user-avatar.png" alt="User picture" class="user-avatar">
+        </a>
+      </div>
+      <h3>Drawer with main menu</h3>
     </nav>
 
     <main class="light_gray">
-      <!-- Icono del menu hamburguesa -->      
-      <a id="menu" class="hamburguer_icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
-        </svg>
-      </a>
+
+      <!-- Navbar o barra superior -->
+      <div class="container-navbar">
+        <!-- Icono del menu hamburguesa --> 
+        <div class="hamb-icon-box">
+          <a id="menu">
+            <svg class="svg-icon" viewBox="0 0 20 20">
+							<path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+								c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
+								s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
+								c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
+						</svg>
+          </a>
+        </div>
+        <!-- Logo --> 
+        <div class="logo-box">
+          <img src="./assets/firebase-logo.png" alt="logo" height="40px" >
+        </div>
+        <!-- Long logo --> 
+        <div class="long-logo-box">
+          <img src="./assets/firebase-long-logo.png" alt="logo" height="40px" >
+        </div>           
+      </div>
+
+      <!-- Barra de busqueda -->
+      <div class="search-navbar">
+        <!-- Caja de busqueda --> 
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="search-box" 
+            class="search-input"
+            placeholder="Search for items..."
+          >
+          <!-- Icono de filtrado --> 
+          <span>
+          <a id="menu" class="filter_icon">
+            <svg class="svg-icon" viewBox="0 0 20 20">
+              <path fill="none" d="M15.808,14.066H6.516v-1.162H5.354v1.162H4.193c-0.321,0-0.581,0.26-0.581,0.58s0.26,0.58,0.581,0.58h1.162
+                v1.162h1.162v-1.162h9.292c0.32,0,0.58-0.26,0.58-0.58S16.128,14.066,15.808,14.066z M15.808,9.419h-1.742V8.258h-1.162v1.161
+                h-8.71c-0.321,0-0.581,0.26-0.581,0.581c0,0.321,0.26,0.581,0.581,0.581h8.71v1.161h1.162v-1.161h1.742
+                c0.32,0,0.58-0.26,0.58-0.581C16.388,9.679,16.128,9.419,15.808,9.419z M17.55,0.708H2.451c-0.962,0-1.742,0.78-1.742,1.742v15.1
+                c0,0.961,0.78,1.74,1.742,1.74H17.55c0.962,0,1.742-0.779,1.742-1.74v-15.1C19.292,1.488,18.512,0.708,17.55,0.708z M18.13,17.551
+                c0,0.32-0.26,0.58-0.58,0.58H2.451c-0.321,0-0.581-0.26-0.581-0.58v-15.1c0-0.321,0.26-0.581,0.581-0.581H17.55
+                c0.32,0,0.58,0.26,0.58,0.581V17.551z M15.808,4.774H9.419V3.612H8.258v1.162H4.193c-0.321,0-0.581,0.26-0.581,0.581
+                s0.26,0.581,0.581,0.581h4.065v1.162h1.161V5.935h6.388c0.32,0,0.58-0.26,0.58-0.581S16.128,4.774,15.808,4.774z"></path>
+            </svg>
+          </a>
+        </span>     
+        </div>       
+      </div>
+
       <p>Listing header</p>
+      
       <!-- Listado central -->
-      <div class="container">
-        <div class="box seafoam"></div>
-        <div class="box light_blue"></div>
-        <div class="box green"></div>
-        <div class="box lime"></div>
-        <div class="box orange"></div>
+      <div class="container-main-listing">
+        <div class="box-main-listing seafoam"></div>
+        <div class="box-main-listing light_blue"></div>
+        <div class="box-main-listing green"></div>
+        <div class="box-main-listing lime"></div>
+        <div class="box-main-listing orange"></div>
       </div>
     </main>
 

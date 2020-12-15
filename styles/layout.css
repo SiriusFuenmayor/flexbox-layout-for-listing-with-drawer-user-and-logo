@@ -24,6 +24,7 @@ main {
 a#menu svg {
   width: 30px;
   fill: #000;
+  margin-top: 5px;
 }
 
 /**********************************************************
@@ -34,7 +35,7 @@ a#menu svg {
   Esta clase define al flexbox del contenedor principal  
   del listado central
 */
-.container {
+.container-main-listing {
   width: 100%;
   display: flex;  
   flex-wrap: wrap;
@@ -44,17 +45,17 @@ a#menu svg {
   Esta clase a cada item dentro del flexbox del listado
   central
 */
-.box {
+.box-main-listing {
   min-width: 250px;
   height: 150px;
 }
 
 /*
   Como cuando el viewport es menor de 500 pixeles no se
-  muestra la gaveta o navbar y cuando se amplie el 
+  muestra la gaveta o sidebar y cuando se amplie el 
   viewport desde los 250px que es el tamano minimo 
   de las cajas hasta los 500px en se despliega la 
-  gaveta o navbar quedara un espacio cada vez mayor 
+  gaveta o sidebar quedara un espacio cada vez mayor 
   alrededor de las cajas y el margen derecho hasta que  
   se alcancen los 500px. Por esto ponemos un media query
   para centrar la columna de cajas cuando el viewport es 
@@ -67,12 +68,58 @@ a#menu svg {
   de cajas hasta dos columnas de cajas.
 */
 @media only screen and (max-width : 725px) {
-  .container {
+  .container-main-listing {
     width: 100%;
     display: flex;  
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+/* 
+  Esta clase define al flexbox del navbar o barra superior.
+  Como vemos el navbar o barra superior se implementa tambien
+  como como un flexbox plegable con flex-wrap: wrap;
+*/
+.container-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+/* 
+  Esta clase a cada item dentro del navbar o barra superior
+*/
+.hamb-icon-box {
+  width: 45px; 
+}
+
+.logo-box {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -3px;
+  display: block;
+}
+
+.long-logo-box {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -3px;  
+  display: none;
+}
+
+.search-box {
+  width: 100%;
+}
+
+.user-avatar-box {
+  width: 45px;
+  align-items: flex-end;  
 }
 
 /**********************************************************
@@ -138,8 +185,17 @@ nav.open {
     Para esconder el icono del menu hamburguesa cuando la gaveta
     esta desplegada.
   */
-  .hamburguer_icon {
+  .hamb-icon-box {
     display: none;
+  }
+
+  .logo-box {
+    display: none;
+  }
+
+
+  .long-logo-box {
+    display: block;
   }
 
 }
