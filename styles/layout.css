@@ -22,7 +22,7 @@
 .box-main-listing {
   min-width: 275px;
   height: 150px;
-  margin: 5px;
+  margin: 1px;
 }
 
 /*
@@ -65,7 +65,9 @@
 }
 
 .hamb-icon-box {
-  width: 35px; 
+  width: 35px;
+  margin-top: 4px;
+  margin-right: 3px;
 }
 
 .logo-box {
