@@ -1,37 +1,25 @@
-.title {
-  font-size: 2.5em;
-  text-align: center;
+.gold_yellow {
+  background-color: #ffe600;
+  /* transform: rotate(5deg); */
 }
 
-.light_gray {
-  background-color: #f3f3f3;
+.light_orange {
+  background-color: #ffc525;
+  /* transform: rotate(-4deg); */
 }
 
-.dark_blue {
-  background-color: #2A457A;
-  color: #efefef;
+.cardenal {
+  background-color: #ee2424;
+  /* transform: rotate(3deg); */
 }
 
-.light_blue {
-  background-color: #099DD9;
-}
-
-.green {
-  background-color: #0C8542;
-}
-
-.lime {
-  background-color: rgb(179, 210, 52);
-}
-
-.seafoam {
-  background-color: rgb(77, 190, 161);
+.coral {
+  background-color: coral;
+  /* transform: rotate(-4deg); */
 }
 
 .red {
-  background-color: #EC1D3B;
+  background-color: #f74020;
+  /* transform: rotate(3deg); */
 }
 
-.orange {
-  background-color: #F79420;
-}
